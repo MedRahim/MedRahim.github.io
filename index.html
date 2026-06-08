@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Med Rahim Ben Nejma | Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div id="preloader">
+    <div class="loader-ring"><div></div><div></div><div></div><div></div></div>
+  </div>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-logo">MR<span>.</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge"><span class="badge-dot"></span>Available for internship · S9 2026</div>
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Mohamed Rahim<br/><span>Ben Nejma</span></h1>
+        <div class="hero-typewriter">
+          <span id="typewriter"></span><span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-desc">
+          4th-year Engineering student at <strong>ESPRIT</strong> · ArcTIC track (Cloud &amp; Infrastructure).
+          Passionate about Full-Stack development, DevOps automation, and building tech that
+          creates real-world impact.
+        </p>
+        <div class="hero-info-row">
+          <span><i class="fas fa-map-marker-alt"></i> Ras Jebel, Bizerte, Tunisia</span>
+          <span><i class="fas fa-phone"></i> +216 46 328 164</span>
+          <span><i class="fas fa-envelope"></i> medrahim.bennejma@esprit.tn</span>
+        </div>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> See My Work</a>
+          <a href="./LastCV.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Download CV</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/MedRahim" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/med-rahim-ben-nejma-4a3b242a5/" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:medrahim.bennejma@esprit.tn" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="photo-wrapper">
+          <div class="photo-ring"></div>
+          <div class="photo-inner">
+            <img src="./me.jpg" alt="Mohamed Rahim Ben Nejma"/>
+          </div>
+          <div class="photo-badge badge-cloud"><i class="fas fa-cloud"></i><span>Cloud</span></div>
+          <div class="photo-badge badge-code"><i class="fas fa-code"></i><span>Dev</span></div>
+          <div class="photo-badge badge-ai"><i class="fas fa-brain"></i><span>AI</span></div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span>Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text" data-reveal>
+          <p>
+            I'm a future engineer specializing in <strong>Cloud &amp; Infrastructure (ArcTIC)</strong> at ESPRIT Ariana,
+            Tunisia. My journey began with a DUT at ISET Kélibia, where I built a solid foundation in IT before
+            jumping into the engineering cycle.
+          </p>
+          <p>
+            I thrive at the intersection of <strong>Full-Stack development</strong> and <strong>DevOps</strong>. From
+            spinning up OpenStack clouds with Ansible automation to crafting React frontends — I love the full picture.
+            I've done internships across IoT startups, game studios, and language-tech companies.
+          </p>
+          <p>
+            I'm also active in the tech community: member of <strong>DeepFlow AI Club</strong>, participant at
+            <strong>Global Game Jam 2024</strong>, and a Google Developer Group workshop alumnus. I believe
+            great engineers communicate as well as they code.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Engineering student — ESPRIT (ArcTIC)</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-language"></i>
+              <span>French B2 (TCF certified · Jan 2024)</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-globe"></i>
+              <span>Seeking EPF Paris-Cachan exchange S9 2026</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fas fa-birthday-cake"></i>
+              <span>Born 28 November 2002</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-stats-col" data-reveal>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+              <h3>6+</h3>
+              <p>Projects Delivered</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+              <h3>4</h3>
+              <p>Internships</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+              <h3>3+</h3>
+              <p>Certifications</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+              <h3>10+</h3>
+              <p>Technologies</p>
+            </div>
+          </div>
+          <div class="education-timeline">
+            <h3 class="timeline-label"><i class="fas fa-graduation-cap"></i> Education</h3>
+            <div class="edu-item">
+              <div class="edu-dot"></div>
+              <div class="edu-info">
+                <strong>Cycle Ingénieur — ArcTIC</strong>
+                <span>ESPRIT Ariana · 2024 – Present</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-dot"></div>
+              <div class="edu-info">
+                <strong>Licence Technologie Informatique</strong>
+                <span>ISET Kélibia · 2021 – 2024</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-dot edu-dot-end"></div>
+              <div class="edu-info">
+                <strong>Baccalauréat Sciences Expérimentales</strong>
+                <span>Lycée Ras Jebal · 2020 – 2021</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Work History</span>
+        <h2 class="section-title">My <span>Experience</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" data-reveal>
+          <div class="timeline-dot"><i class="fas fa-building"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-company">
+                <h3>Mobelite Tunisie</h3>
+                <span class="tl-type intern">Stage d'Immersion</span>
+              </div>
+              <span class="tl-date"><i class="fas fa-calendar"></i> Jul 2025 – Aug 2025</span>
+            </div>
+            <h4 class="tl-project">Language Explorer — AI Pronunciation Assistant</h4>
+            <ul class="tl-bullets">
+              <li>Built an intelligent pronunciation assistant using the <strong>Web Speech API</strong> for speech recognition &amp; synthesis</li>
+              <li>Developed a responsive interface with <strong>React.js</strong> and <strong>Tailwind CSS</strong></li>
+              <li>Handled authentication and real-time data persistence with <strong>Firebase</strong></li>
+            </ul>
+            <div class="tl-tech">
+              <span>React.js</span><span>Tailwind CSS</span><span>Firebase</span><span>Web Speech API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-reveal>
+          <div class="timeline-dot"><i class="fas fa-gamepad"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-company">
+                <h3>DigiArt Living Lab / ISET Kélibia</h3>
+                <span class="tl-type pfe">Stage PFE</span>
+              </div>
+              <span class="tl-date"><i class="fas fa-calendar"></i> Feb 2024 – Jun 2024</span>
+            </div>
+            <h4 class="tl-project">Digital Twin — Composting Game with Unreal Engine</h4>
+            <ul class="tl-bullets">
+              <li>Designed and developed an innovative video game with <strong>Unreal Engine</strong></li>
+              <li>Integrated a <strong>Digital Twin</strong> to simulate a real-world composting process in-game</li>
+              <li>Built a companion <strong>React</strong> platform for dynamic UI and game supervision</li>
+            </ul>
+            <div class="tl-tech">
+              <span>Unreal Engine</span><span>React</span><span>Digital Twin</span><span>3D Simulation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-reveal>
+          <div class="timeline-dot"><i class="fas fa-leaf"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-company">
+                <h3>Smart for Green</h3>
+                <span class="tl-type perf">Stage de Perfectionnement</span>
+              </div>
+              <span class="tl-date"><i class="fas fa-calendar"></i> Jan 2023 – Feb 2023</span>
+            </div>
+            <h4 class="tl-project">IoT Environmental Monitoring App</h4>
+            <ul class="tl-bullets">
+              <li>Built an environmental monitoring app using <strong>LoRaWAN</strong> and <strong>Arduino</strong></li>
+              <li>Optimized data transmission range to <strong>2 km</strong> while reducing energy consumption by <strong>30%</strong></li>
+            </ul>
+            <div class="tl-tech">
+              <span>Arduino</span><span>LoRaWAN</span><span>IoT</span><span>C++</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-reveal>
+          <div class="timeline-dot"><i class="fas fa-industry"></i></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div class="tl-company">
+                <h3>Denim Authority</h3>
+                <span class="tl-type init">Stage d'Initiation</span>
+              </div>
+              <span class="tl-date"><i class="fas fa-calendar"></i> Jan 2022 – Feb 2022</span>
+            </div>
+            <h4 class="tl-project">Project Management Discovery &amp; Inventory Modernization</h4>
+            <ul class="tl-bullets">
+              <li>Explored professional project management workflows in a manufacturing environment</li>
+              <li>Contributed to modernizing the stock tracking &amp; inventory management system</li>
+            </ul>
+            <div class="tl-tech">
+              <span>Project Management</span><span>ERP Systems</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+      </div>
+      <div class="skills-wrapper">
+
+        <div class="skill-group" data-reveal>
+          <div class="skill-group-header">
+            <div class="skill-group-icon"><i class="fas fa-cloud"></i></div>
+            <h3>Cloud &amp; DevOps</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fab fa-docker"></i><span>Docker &amp; Docker Swarm</span></div>
+            <div class="skill-item"><i class="fas fa-robot"></i><span>Ansible Automation</span></div>
+            <div class="skill-item"><i class="fas fa-server"></i><span>OpenStack</span></div>
+            <div class="skill-item"><i class="fab fa-aws"></i><span>AWS (Initiation)</span></div>
+            <div class="skill-item"><i class="fas fa-infinity"></i><span>CI/CD Pipelines</span></div>
+            <div class="skill-item"><i class="fab fa-linux"></i><span>Linux / Unix Admin</span></div>
+          </div>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <div class="skill-group-header">
+            <div class="skill-group-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fab fa-react"></i><span>React.js</span></div>
+            <div class="skill-item"><i class="fab fa-angular"></i><span>Angular</span></div>
+            <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript / TypeScript</span></div>
+            <div class="skill-item"><i class="fas fa-wind"></i><span>Tailwind CSS</span></div>
+            <div class="skill-item"><i class="fab fa-html5"></i><span>HTML5 / CSS3</span></div>
+            <div class="skill-item"><i class="fas fa-mobile-alt"></i><span>FlutterFlow</span></div>
+          </div>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <div class="skill-group-header">
+            <div class="skill-group-icon"><i class="fas fa-server"></i></div>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fab fa-java"></i><span>Spring Boot</span></div>
+            <div class="skill-item"><i class="fab fa-java"></i><span>JavaFX</span></div>
+            <div class="skill-item"><i class="fab fa-node-js"></i><span>Node.js / NestJS</span></div>
+            <div class="skill-item"><i class="fab fa-php"></i><span>PHP / Symfony</span></div>
+            <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+          </div>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <div class="skill-group-header">
+            <div class="skill-group-icon"><i class="fas fa-database"></i></div>
+            <h3>Databases &amp; Networks</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fas fa-database"></i><span>MySQL / PostgreSQL</span></div>
+            <div class="skill-item"><i class="fas fa-fire"></i><span>Firebase / Firestore</span></div>
+            <div class="skill-item"><i class="fas fa-network-wired"></i><span>Switching &amp; Routing (CCNA)</span></div>
+            <div class="skill-item"><i class="fas fa-shield-alt"></i><span>Network Security</span></div>
+            <div class="skill-item"><i class="fas fa-project-diagram"></i><span>SOA / Microservices</span></div>
+          </div>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <div class="skill-group-header">
+            <div class="skill-group-icon"><i class="fas fa-microchip"></i></div>
+            <h3>IoT &amp; Other</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fas fa-microchip"></i><span>Arduino</span></div>
+            <div class="skill-item"><i class="fas fa-broadcast-tower"></i><span>LoRaWAN</span></div>
+            <div class="skill-item"><i class="fas fa-cubes"></i><span>Unreal Engine</span></div>
+            <div class="skill-item"><i class="fas fa-tasks"></i><span>Agile Scrum</span></div>
+            <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git / GitHub</span></div>
+          </div>
+        </div>
+
+        <div class="skill-group" data-reveal>
+          <div class="skill-group-header">
+            <div class="skill-group-icon"><i class="fas fa-comments"></i></div>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><i class="fas fa-flag"></i><span>Arabic — Native</span></div>
+            <div class="skill-item"><i class="fas fa-flag"></i><span>French — B2 (TCF Certified)</span></div>
+            <div class="skill-item"><i class="fas fa-flag"></i><span>English — Professional</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">My <span>Projects</span></h2>
+      </div>
+
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="cloud">Cloud / DevOps</button>
+        <button class="filter-btn" data-filter="web">Web / Full-Stack</button>
+        <button class="filter-btn" data-filter="iot">IoT</button>
+        <button class="filter-btn" data-filter="game">Game Dev</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- SmartHire -->
+        <div class="project-card smarthire-card" data-category="cloud web" data-reveal>
+          <!-- Video thumbnail -->
+          <div class="project-video-thumb" id="videoThumb" onclick="openVideoModal()">
+            <video src="./Commercial Video.mp4" muted preload="metadata" id="thumbVideo"></video>
+            <div class="video-play-overlay">
+              <div class="play-btn-big"><i class="fas fa-play"></i></div>
+              <span>Watch Commercial</span>
+            </div>
+          </div>
+          <div class="project-card-top" style="margin-top:1rem">
+            <div class="project-icon-wrap" style="--icon-color:#6c63ff"><i class="fas fa-cloud"></i></div>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+              <button class="proj-link" title="Watch Video" onclick="openVideoModal()"><i class="fas fa-play"></i></button>
+            </div>
+          </div>
+          <span class="project-category-tag">Cloud · Full-Stack · 4th Year Project</span>
+          <h3>SmartHire — Recruitment &amp; Assessment Platform</h3>
+          <p>
+            Full cloud-native recruitment platform. Built the complete <strong>OpenStack</strong> infrastructure
+            (Compute, Network, Storage) and automated the entire stack deployment with <strong>Ansible</strong>.
+            Developed the Assessment module with skill evaluation and automated scoring using
+            <strong>Spring Boot</strong> backend and <strong>Angular</strong> frontend.
+          </p>
+          <div class="project-tech">
+            <span>OpenStack</span><span>Ansible</span><span>Spring Boot</span>
+            <span>Angular</span><span>Docker</span><span>PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- Language Explorer -->
+        <div class="project-card" data-category="web ai" data-reveal>
+          <div class="project-card-top">
+            <div class="project-icon-wrap" style="--icon-color:#ff6584"><i class="fas fa-microphone-alt"></i></div>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <span class="project-category-tag">AI · Web · Internship @ Mobelite</span>
+          <h3>Language Explorer — AI Pronunciation Assistant</h3>
+          <p>
+            An intelligent web assistant that helps users improve their pronunciation. Uses the browser's
+            <strong>Web Speech API</strong> for real-time speech recognition and text-to-speech synthesis.
+            Built with <strong>React.js + Tailwind</strong>, backed by <strong>Firebase</strong> for auth and
+            persistent learning progress.
+          </p>
+          <div class="project-tech">
+            <span>React.js</span><span>Tailwind CSS</span><span>Firebase</span><span>Web Speech API</span>
+          </div>
+        </div>
+
+        <!-- Digital Twin -->
+        <div class="project-card" data-category="game web" data-reveal>
+          <div class="project-card-top">
+            <div class="project-icon-wrap" style="--icon-color:#f59e0b"><i class="fas fa-gamepad"></i></div>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <span class="project-category-tag">Game Dev · Digital Twin · PFE</span>
+          <h3>Digital Twin — Composting Simulation Game</h3>
+          <p>
+            Final-year project at DigiArt Living Lab. Designed an innovative video game in
+            <strong>Unreal Engine</strong> that embeds a full <strong>Digital Twin</strong> of a composting
+            process — players manage a real simulated composting system. Built a companion
+            <strong>React</strong> supervision platform for dynamic monitoring.
+          </p>
+          <div class="project-tech">
+            <span>Unreal Engine</span><span>Digital Twin</span><span>React</span><span>C++</span>
+          </div>
+        </div>
+
+        <!-- Smart City JavaFX/Symfony -->
+        <div class="project-card" data-category="web" data-reveal>
+          <div class="project-card-top">
+            <div class="project-icon-wrap" style="--icon-color:#10b981"><i class="fas fa-city"></i></div>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <span class="project-category-tag">Full-Stack · Smart City · 3rd Year</span>
+          <h3>Smart City — JavaFX / Symfony Integration</h3>
+          <p>
+            A comprehensive Smart City management platform. Developed a reactive
+            <strong>JavaFX</strong> front-office with rich interactive modules, paired with a robust
+            <strong>Symfony</strong> back-end. Covers urban data management, security, and
+            real-time city monitoring features.
+          </p>
+          <div class="project-tech">
+            <span>JavaFX</span><span>Symfony</span><span>PHP</span><span>MySQL</span><span>Java</span>
+          </div>
+        </div>
+
+        <!-- IoT LoRaWAN -->
+        <div class="project-card" data-category="iot" data-reveal>
+          <div class="project-card-top">
+            <div class="project-icon-wrap" style="--icon-color:#3b82f6"><i class="fas fa-broadcast-tower"></i></div>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <span class="project-category-tag">IoT · Embedded · Internship @ Smart for Green</span>
+          <h3>Environmental IoT Monitor — LoRaWAN</h3>
+          <p>
+            Designed and deployed a long-range environmental monitoring system using
+            <strong>LoRaWAN</strong> protocol and <strong>Arduino</strong> sensors. Achieved data
+            transmission over <strong>2 km</strong> range. Optimized power management, reducing
+            energy consumption by <strong>30%</strong> — critical for remote field deployments.
+          </p>
+          <div class="project-tech">
+            <span>Arduino</span><span>LoRaWAN</span><span>C++</span><span>IoT Sensors</span>
+          </div>
+        </div>
+
+        <!-- IoT Fire Detection -->
+        <div class="project-card" data-category="iot ai" data-reveal>
+          <div class="project-card-top">
+            <div class="project-icon-wrap" style="--icon-color:#ef4444"><i class="fas fa-fire"></i></div>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <span class="project-category-tag">IoT · Arduino · Academic</span>
+          <h3>Arduino Forest Fire Detection System</h3>
+          <p>
+            An Arduino-based early-warning system addressing forest fires in Tunisia. Combines
+            multiple smoke, heat, and flame sensors with automated alerting logic. Designed for
+            remote deployment in high-risk forest zones with low-power operation.
+          </p>
+          <div class="project-tech">
+            <span>Arduino</span><span>C++</span><span>Flame Sensor</span><span>DHT Sensor</span><span>IoT</span>
+          </div>
+        </div>
+
+        <!-- Global Game Jam -->
+        <div class="project-card" data-category="game" data-reveal>
+          <div class="project-card-top">
+            <div class="project-icon-wrap" style="--icon-color:#8b5cf6"><i class="fas fa-dice-d20"></i></div>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <span class="project-category-tag">Game Dev · Team · Global Game Jam 2024</span>
+          <h3>Global Game Jam 2024 — Game Prototype</h3>
+          <p>
+            Participated in the worldwide <strong>Global Game Jam 2024</strong> — 48-hour game development
+            marathon. Worked in a team to design and ship a full game prototype featuring innovative
+            mechanics from scratch under time pressure.
+          </p>
+          <div class="project-tech">
+            <span>Game Design</span><span>Team Collaboration</span><span>Rapid Prototyping</span>
+          </div>
+        </div>
+
+        <!-- Educational Game Platform -->
+        <div class="project-card" data-category="web game" data-reveal>
+          <div class="project-card-top">
+            <div class="project-icon-wrap" style="--icon-color:#06b6d4"><i class="fas fa-chalkboard-teacher"></i></div>
+            <div class="project-links">
+              <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <span class="project-category-tag">Web · Education · DeepFlow</span>
+          <h3>Educational Game Supervision Platform</h3>
+          <p>
+            A web platform for supervising and managing an educational game experience. Focused on
+            UX/UI design, user progress tracking, and interactive learning dashboards. Developed
+            in the context of AI community involvement at <strong>DeepFlow Club</strong>.
+          </p>
+          <div class="project-tech">
+            <span>React.js</span><span>Node.js</span><span>JavaScript</span><span>Dashboard UI</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATIONS ========== -->
+  <section id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title">Certifi<span>cations</span></h2>
+      </div>
+      <div class="certs-grid">
+
+        <div class="cert-card" data-reveal>
+          <div class="cert-badge">
+            <img src="./ccna-switching-routing-and-wireless-essentials.1.png" alt="CCNA Badge"/>
+          </div>
+          <div class="cert-body">
+            <span class="cert-org">Cisco Networking Academy · ESPRIT</span>
+            <h3>CCNA — Switching, Routing &amp; Wireless Essentials</h3>
+            <p>Completed the CCNA Switching, Routing, and Wireless Essentials course. Covers VLANs, STP,
+            inter-VLAN routing, EtherChannel, OSPF, NAT, and wireless LAN concepts.</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-calendar-check"></i> Completed: 29 Jul 2025</span>
+              <span class="cert-level cert-gold"><i class="fas fa-star"></i> Professional</span>
+            </div>
+            <a href="./CCNA-_Switching-_Routing-_and_Wireless_Essentials_certificate_medrahim-bennejma-esprit-tn_f015cf54-d04f-47f4-aac3-c3bb276957ea.pdf" class="cert-btn" target="_blank">
+              <i class="fas fa-external-link-alt"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <div class="cert-card" data-reveal>
+          <div class="cert-badge cert-badge-icon" style="--badge-color:#4285f4">
+            <i class="fab fa-google"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-org">GDG on Campus · ESPRIT</span>
+            <h3>NestJS Workshop — Certificate of Participation</h3>
+            <p>Active participation and successful completion of an interactive workshop on
+            <strong>NestJS</strong> — covering modules, providers, dependency injection, and REST API
+            architecture. Conducted by GDG on Campus leads Malek Labidi &amp; Med Aziz Nairi.</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-calendar-check"></i> November 13, 2024</span>
+              <span class="cert-level cert-blue"><i class="fas fa-award"></i> Workshop</span>
+            </div>
+            <a href="./certificate of Participation- 2024_2025 (3).pdf" class="cert-btn" target="_blank">
+              <i class="fas fa-external-link-alt"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <div class="cert-card" data-reveal>
+          <div class="cert-badge cert-badge-icon" style="--badge-color:#003189">
+            <i class="fas fa-flag"></i>
+          </div>
+          <div class="cert-body">
+            <span class="cert-org">France Éducation International · Institut Français de Tunisie</span>
+            <h3>TCF — Test de Connaissance du Français</h3>
+            <p>Official French language proficiency certification by France Éducation International.
+            Obtained global score corresponding to <strong>B2 level (CEFR)</strong> — proving professional
+            and academic French communication ability. Required for European exchange programs.</p>
+            <div class="cert-meta">
+              <span class="cert-date"><i class="fas fa-calendar-check"></i> Session: 30 Jan 2024</span>
+              <span class="cert-level cert-green"><i class="fas fa-language"></i> B2 Level</span>
+            </div>
+            <a href="./All.pdf" class="cert-btn" target="_blank">
+              <i class="fas fa-external-link-alt"></i> View Attestation
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Let's Talk</span>
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+      </div>
+      <p class="contact-subtitle">
+        I'm open to internship opportunities, collaborative projects, or just a great tech conversation.
+        Currently looking for an <strong>S9 exchange semester at EPF Paris-Cachan</strong> for Sept 2026.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal>
+          <div class="contact-card">
+            <a href="mailto:medrahim.bennejma@esprit.tn" class="contact-item-link">
+              <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-item-text">
+                <span>Email</span>
+                <strong>medrahim.bennejma@esprit.tn</strong>
+              </div>
+            </a>
+          </div>
+          <div class="contact-card">
+            <a href="tel:+21646328164" class="contact-item-link">
+              <div class="contact-item-icon" style="--ci:#10b981"><i class="fas fa-phone"></i></div>
+              <div class="contact-item-text">
+                <span>Phone</span>
+                <strong>+216 46 328 164</strong>
+              </div>
+            </a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-item-link">
+              <div class="contact-item-icon" style="--ci:#f59e0b"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-item-text">
+                <span>Location</span>
+                <strong>Ras Jebel, Bizerte, Tunisia</strong>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-item-link">
+              <div class="contact-item-icon" style="--ci:#8b5cf6"><i class="fas fa-graduation-cap"></i></div>
+              <div class="contact-item-text">
+                <span>University</span>
+                <strong>ESPRIT — ArcTIC Engineering</strong>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/MedRahim" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/med-rahim-ben-nejma-4a3b242a5/" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:medrahim.bennejma@esprit.tn" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" data-reveal>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="John Doe" required/>
+            </div>
+            <div class="form-group">
+              <label>Your Email</label>
+              <input type="email" placeholder="john@example.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" placeholder="Internship Opportunity / Collaboration"/>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="6" placeholder="Tell me about the opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">MR<span>.</span></div>
+      <p>Designed &amp; built by <strong>Mohamed Rahim Ben Nejma</strong> · 2025</p>
+      <p class="footer-sub">ESPRIT · ArcTIC Engineering · Ras Jebel, Tunisia</p>
+      <div class="footer-socials">
+        <a href="https://github.com/MedRahim" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/med-rahim-ben-nejma-4a3b242a5/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:medrahim.bennejma@esprit.tn"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">
+    <div class="video-modal-inner">
+      <button class="video-modal-close" onclick="closeVideoModal()"><i class="fas fa-times"></i></button>
+      <video id="modalVideo" src="./Commercial Video.mp4" controls autoplay></video>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
