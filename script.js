@@ -230,33 +230,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   document.head.appendChild(style);
 })();
 
-/* ===================== VIDEO MODAL ===================== */
-function openVideoModal() {
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('modalVideo');
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  video.play();
-}
-
-function closeVideoModal(e) {
-  // close if clicking backdrop or close button (not the video itself)
-  if (e && e.target.closest('.video-modal-inner') && !e.target.closest('.video-modal-close')) return;
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('modalVideo');
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
-  video.pause();
-  video.currentTime = 0;
-}
-
-// Close on Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeVideoModal();
-});
-
-// Load video thumbnail frame
-window.addEventListener('load', () => {
-  const thumb = document.getElementById('thumbVideo');
-  if (thumb) thumb.currentTime = 1;
-});

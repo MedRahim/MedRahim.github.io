@@ -397,20 +397,11 @@
       <div class="projects-grid">
 
         <!-- SmartHire -->
-        <div class="project-card smarthire-card" data-category="cloud web" data-reveal>
-          <!-- Video thumbnail -->
-          <div class="project-video-thumb" id="videoThumb" onclick="openVideoModal()">
-            <video src="./Commercial Video.mp4" muted preload="metadata" id="thumbVideo"></video>
-            <div class="video-play-overlay">
-              <div class="play-btn-big"><i class="fas fa-play"></i></div>
-              <span>Watch Commercial</span>
-            </div>
-          </div>
-          <div class="project-card-top" style="margin-top:1rem">
+        <div class="project-card" data-category="cloud web" data-reveal>
+          <div class="project-card-top">
             <div class="project-icon-wrap" style="--icon-color:#6c63ff"><i class="fas fa-cloud"></i></div>
             <div class="project-links">
               <a href="#" class="proj-link" title="GitHub"><i class="fab fa-github"></i></a>
-              <button class="proj-link" title="Watch Video" onclick="openVideoModal()"><i class="fas fa-play"></i></button>
             </div>
           </div>
           <span class="project-category-tag">Cloud · Full-Stack · 4th Year Project</span>
@@ -753,14 +744,6 @@
   <button class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
-
-  <!-- VIDEO MODAL -->
-  <div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">
-    <div class="video-modal-inner">
-      <button class="video-modal-close" onclick="closeVideoModal()"><i class="fas fa-times"></i></button>
-      <video id="modalVideo" src="./Commercial Video.mp4" controls autoplay></video>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
