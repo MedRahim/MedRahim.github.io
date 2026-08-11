@@ -703,29 +703,16 @@ section { padding: 7rem 5%; }
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-}
-.project-card:hover .project-thumb img { transform: scale(1.05); }
-.project-view-hint {
-  position: absolute; left: 50%; bottom: 12px;
-  transform: translateX(-50%) translateY(8px);
-  opacity: 0;
-  background: rgba(8,8,18,0.85);
-  border: 1px solid rgba(108,99,255,0.35);
-  color: var(--text);
-  font-size: 0.72rem; font-weight: 600;
-  padding: 0.4rem 0.85rem; border-radius: 50px;
-  white-space: nowrap;
-  transition: var(--transition);
   pointer-events: none;
 }
-.project-card:hover .project-view-hint {
-  opacity: 1; transform: translateX(-50%) translateY(0);
-}
+.project-card:hover .project-thumb img { transform: scale(1.05); }
 .project-card-body {
   padding: 1.25rem 1.5rem 1.5rem;
   display: flex; flex-direction: column; gap: 0.65rem;
   flex: 1;
+  pointer-events: none;
 }
+.project-card-body .proj-link { pointer-events: auto; }
 .project-card-top { display: flex; justify-content: space-between; align-items: center; }
 .project-card h3 {
   font-size: 1.05rem; font-weight: 700; color: var(--text); line-height: 1.35;
@@ -741,9 +728,13 @@ section { padding: 7rem 5%; }
   display: flex; align-items: center; justify-content: center;
   padding: 1.25rem;
   opacity: 0; visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.25s ease, visibility 0.25s ease;
 }
-.project-modal.open { opacity: 1; visibility: visible; }
+.project-modal.open {
+  opacity: 1; visibility: visible;
+  pointer-events: auto;
+}
 .project-modal-backdrop {
   position: absolute; inset: 0;
   background: rgba(4,4,12,0.78);
@@ -821,10 +812,15 @@ section { padding: 7rem 5%; }
   position: fixed; inset: 0; z-index: 3000;
   background: rgba(0,0,0,0.92);
   display: flex; align-items: center; justify-content: center;
-  opacity: 0; visibility: hidden; transition: 0.2s ease;
+  opacity: 0; visibility: hidden;
+  pointer-events: none;
+  transition: 0.2s ease;
   padding: 1rem;
 }
-.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox.open {
+  opacity: 1; visibility: visible;
+  pointer-events: auto;
+}
 .lightbox img {
   max-width: min(92vw, 1100px);
   max-height: 86vh;
