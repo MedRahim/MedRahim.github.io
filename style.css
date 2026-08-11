@@ -782,6 +782,7 @@ section { padding: 7rem 5%; }
 }
 .project-card.no-image .project-thumb { display: none; }
 .project-card.no-image .project-card-body { padding-top: 1.4rem; }
+#modalGalleryWrap { display: none !important; }
 .modal-gallery-title {
   margin: 1.2rem 0 0.8rem;
   font-size: 0.95rem;

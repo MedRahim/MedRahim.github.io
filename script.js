@@ -225,7 +225,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     let currentCaptures = [];
-    let lightboxIndex = 0;
+
+    function hideGallery() {
+      currentCaptures = [];
+      if (galleryWrap) {
+        galleryWrap.hidden = true;
+        galleryWrap.setAttribute('aria-hidden', 'true');
+      }
+      if (gallery) gallery.innerHTML = '';
+      if (captureCount) captureCount.textContent = '';
+    }
+
+    hideGallery();
 
     function openModal(id) {
       const p = window.PROJECTS[id];
@@ -245,24 +256,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
 
       tech.innerHTML = (p.tech || []).map(t => `<span>${t}</span>`).join('');
-      currentCaptures = Array.isArray(p.captures) ? p.captures.filter(Boolean) : [];
-
-      const hasImages = currentCaptures.length > 0;
-      if (galleryWrap) galleryWrap.hidden = !hasImages;
-
-      if (gallery) {
-        if (hasImages) {
-          if (captureCount) captureCount.textContent = `(${currentCaptures.length})`;
-          gallery.innerHTML = currentCaptures.map((src, i) => `
-            <button type="button" data-idx="${i}" aria-label="Open capture ${i + 1}">
-              <img src="${src}" alt="${p.title} capture ${i + 1}" loading="lazy"/>
-            </button>
-          `).join('');
-        } else {
-          gallery.innerHTML = '';
-          if (captureCount) captureCount.textContent = '';
-        }
-      }
+      hideGallery();
 
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
@@ -275,26 +269,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       document.body.style.overflow = '';
     }
 
-    function openLightbox(idx) {
-      if (!currentCaptures.length) return;
-      lightboxIndex = idx;
-      lightboxImg.src = currentCaptures[lightboxIndex];
-      lightboxCounter.textContent = `${lightboxIndex + 1} / ${currentCaptures.length}`;
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
-    }
+    function openLightbox() { /* gallery disabled */ }
 
     function closeLightbox() {
       lightbox.classList.remove('open');
       lightbox.setAttribute('aria-hidden', 'true');
     }
 
-    function stepLightbox(dir) {
-      if (!currentCaptures.length) return;
-      lightboxIndex = (lightboxIndex + dir + currentCaptures.length) % currentCaptures.length;
-      lightboxImg.src = currentCaptures[lightboxIndex];
-      lightboxCounter.textContent = `${lightboxIndex + 1} / ${currentCaptures.length}`;
-    }
+    function stepLightbox() { /* gallery disabled */ }
 
     function handleProjectCardClick(e) {
       if (e.target.closest('[data-stop]')) return;
@@ -308,13 +290,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 
     modal.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', closeModal));
-    if (gallery) {
-      gallery.addEventListener('click', (e) => {
-        const btn = e.target.closest('button[data-idx]');
-        if (!btn) return;
-        openLightbox(Number(btn.dataset.idx));
-      });
-    }
     if (lightboxPrev) lightboxPrev.addEventListener('click', () => stepLightbox(-1));
     if (lightboxNext) lightboxNext.addEventListener('click', () => stepLightbox(1));
     lightbox.addEventListener('click', (e) => {
