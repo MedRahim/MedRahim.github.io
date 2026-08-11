@@ -194,7 +194,113 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ===================== PARTICLE STARS (lightweight) ===================== */
+/* ===================== PROJECT MODAL + LIGHTBOX ===================== */
+(function initProjectModal() {
+  const modal = document.getElementById('projectModal');
+  const lightbox = document.getElementById('lightbox');
+  if (!modal || !window.PROJECTS) return;
+
+  const cover = document.getElementById('modalCover');
+  const title = document.getElementById('modalTitle');
+  const tag = document.getElementById('modalTag');
+  const summary = document.getElementById('modalSummary');
+  const note = document.getElementById('modalNote');
+  const tech = document.getElementById('modalTech');
+  const gallery = document.getElementById('modalGallery');
+  const captureCount = document.getElementById('modalCaptureCount');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+
+  let currentCaptures = [];
+  let lightboxIndex = 0;
+
+  function openModal(id) {
+    const p = window.PROJECTS[id];
+    if (!p) return;
+    cover.src = p.cover;
+    cover.alt = p.title;
+    title.textContent = p.title;
+    tag.textContent = p.tag;
+    summary.textContent = p.summary;
+    if (p.note) {
+      note.hidden = false;
+      note.textContent = p.note;
+    } else {
+      note.hidden = true;
+      note.textContent = '';
+    }
+    tech.innerHTML = (p.tech || []).map(t => `<span>${t}</span>`).join('');
+    currentCaptures = p.captures || [];
+    captureCount.textContent = `(${currentCaptures.length})`;
+    gallery.innerHTML = currentCaptures.map((src, i) => `
+      <button type="button" data-idx="${i}" aria-label="Open capture ${i + 1}">
+        <img src="${src}" alt="${p.title} capture ${i + 1}" loading="lazy"/>
+      </button>
+    `).join('');
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function openLightbox(idx) {
+    if (!currentCaptures.length) return;
+    lightboxIndex = idx;
+    lightboxImg.src = currentCaptures[lightboxIndex];
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${currentCaptures.length}`;
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+  }
+
+  function stepLightbox(dir) {
+    if (!currentCaptures.length) return;
+    lightboxIndex = (lightboxIndex + dir + currentCaptures.length) % currentCaptures.length;
+    lightboxImg.src = currentCaptures[lightboxIndex];
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${currentCaptures.length}`;
+  }
+
+  document.querySelectorAll('.project-card--clickable').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('[data-stop]')) return;
+      openModal(card.dataset.project);
+    });
+  });
+
+  modal.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', closeModal));
+  gallery.addEventListener('click', (e) => {
+    const btn = e.target.closest('button[data-idx]');
+    if (!btn) return;
+    openLightbox(Number(btn.dataset.idx));
+  });
+
+  document.querySelectorAll('[data-close-lightbox]').forEach(el => el.addEventListener('click', closeLightbox));
+  document.getElementById('lightboxPrev').addEventListener('click', () => stepLightbox(-1));
+  document.getElementById('lightboxNext').addEventListener('click', () => stepLightbox(1));
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (lightbox.classList.contains('open')) closeLightbox();
+      else if (modal.classList.contains('open')) closeModal();
+    }
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') stepLightbox(-1);
+    if (e.key === 'ArrowRight') stepLightbox(1);
+  });
+})();
+
 (function createStars() {
   const hero = document.getElementById('hero');
   if (!hero) return;
