@@ -38,11 +38,11 @@ document.querySelectorAll('a, button, .project-card, .stat-card, .cert-card').fo
 
 /* ===================== TYPEWRITER ===================== */
 const roles = [
-  'Full-Stack Developer',
   'Cloud & DevOps Engineer',
-  'IoT Builder',
-  'Game Developer',
-  'AI Enthusiast'
+  'Full-Stack Developer',
+  'React Native Builder',
+  'OpenStack / K8s Enthusiast',
+  'IoT & Product Maker'
 ];
 let roleIdx = 0, charIdx = 0, isDeleting = false;
 const typewriterEl = document.getElementById('typewriter');

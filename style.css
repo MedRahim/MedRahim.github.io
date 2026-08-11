@@ -548,8 +548,21 @@ section { padding: 7rem 5%; }
 .tl-type.intern { background: rgba(108,99,255,0.15); color: var(--primary); }
 .tl-type.pfe { background: rgba(245,158,11,0.15); color: var(--amber); }
 .tl-type.perf { background: rgba(16,185,129,0.15); color: var(--teal); }
-.tl-type.init { background: rgba(59,130,246,0.15); color: var(--blue); }
-.tl-date {
+.tl-type.eng { background: rgba(14,165,233,0.15); color: #0ea5e9; }
+.tl-school {
+  display: inline-block;
+  margin-left: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0.2rem 0.55rem;
+  border-radius: 50px;
+}
+.tl-company { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; }
+.tl-company h3 { width: 100%; }
   font-size: 0.8rem; color: var(--text-muted);
   display: flex; align-items: center; gap: 5px;
 }
