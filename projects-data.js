@@ -1,4 +1,4 @@
-/* Project catalog — no covers; Immo has 3 app captures only */
+/* Project catalog — no covers; Immo has 2 app captures only */
 window.PROJECTS = {
   immo: {
     title: 'Immo Dary — Real-Estate Marketplace',
@@ -23,8 +23,7 @@ window.PROJECTS = {
     tech: ['React Native', 'TypeScript', 'Express', 'SQL Server', 'REST', 'JWT', 'Google Sign-In', 'Stripe', 'Groq AI', 'Docker', 'Azure', 'OpenStreetMap', 'i18n'],
     captures: [
       './assets/projects/immo-40-home.jpg',
-      './assets/projects/immo-nav-01.jpg',
-      './assets/projects/immo-nav-05.jpg'
+      './assets/projects/immo-nav-01.jpg'
     ]
   },
 

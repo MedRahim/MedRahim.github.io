@@ -219,12 +219,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const lightboxPrev = document.getElementById('lightboxPrev');
     const lightboxNext = document.getElementById('lightboxNext');
 
+    if (!title || !tag || !summary || !details || !tech) {
+      console.warn('Project modal markup incomplete');
+      return;
+    }
+
     let currentCaptures = [];
     let lightboxIndex = 0;
 
     function openModal(id) {
       const p = window.PROJECTS[id];
       if (!p) return;
+
       title.textContent = p.title;
       tag.textContent = p.tag;
       summary.textContent = p.summary;
@@ -233,8 +239,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       details.innerHTML = detailList.map(d => `<li>${d}</li>`).join('');
       details.hidden = detailList.length === 0;
 
-      note.hidden = true;
-      note.textContent = '';
+      if (note) {
+        note.hidden = true;
+        note.textContent = '';
+      }
 
       tech.innerHTML = (p.tech || []).map(t => `<span>${t}</span>`).join('');
       currentCaptures = Array.isArray(p.captures) ? p.captures.filter(Boolean) : [];
@@ -242,16 +250,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       const hasImages = currentCaptures.length > 0;
       if (galleryWrap) galleryWrap.hidden = !hasImages;
 
-      if (hasImages) {
-        captureCount.textContent = `(${currentCaptures.length})`;
-        gallery.innerHTML = currentCaptures.map((src, i) => `
-          <button type="button" data-idx="${i}" aria-label="Open capture ${i + 1}">
-            <img src="${src}" alt="${p.title} capture ${i + 1}" loading="lazy"/>
-          </button>
-        `).join('');
-      } else {
-        gallery.innerHTML = '';
-        captureCount.textContent = '';
+      if (gallery) {
+        if (hasImages) {
+          if (captureCount) captureCount.textContent = `(${currentCaptures.length})`;
+          gallery.innerHTML = currentCaptures.map((src, i) => `
+            <button type="button" data-idx="${i}" aria-label="Open capture ${i + 1}">
+              <img src="${src}" alt="${p.title} capture ${i + 1}" loading="lazy"/>
+            </button>
+          `).join('');
+        } else {
+          gallery.innerHTML = '';
+          if (captureCount) captureCount.textContent = '';
+        }
       }
 
       modal.classList.add('open');
@@ -286,20 +296,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       lightboxCounter.textContent = `${lightboxIndex + 1} / ${currentCaptures.length}`;
     }
 
-    // Whole card is clickable (direct click, no hint text)
-    projectsRoot.addEventListener('click', (e) => {
+    function handleProjectCardClick(e) {
       if (e.target.closest('[data-stop]')) return;
-      const card = e.target.closest('.project-card[data-project]');
-      if (!card) return;
+      const card = e.currentTarget;
       openModal(card.dataset.project);
+    }
+
+    // Bind on each card so clicks work even when .project-card-body uses pointer-events: none
+    document.querySelectorAll('.project-card[data-project]').forEach(card => {
+      card.addEventListener('click', handleProjectCardClick);
     });
 
     modal.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', closeModal));
-    gallery.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[data-idx]');
-      if (!btn) return;
-      openLightbox(Number(btn.dataset.idx));
-    });
+    if (gallery) {
+      gallery.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-idx]');
+        if (!btn) return;
+        openLightbox(Number(btn.dataset.idx));
+      });
+    }
     if (lightboxPrev) lightboxPrev.addEventListener('click', () => stepLightbox(-1));
     if (lightboxNext) lightboxNext.addEventListener('click', () => stepLightbox(1));
     lightbox.addEventListener('click', (e) => {
