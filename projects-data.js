@@ -1,224 +1,191 @@
-/* Project catalog — only real captures; empty captures = no image UI */
+/* Project catalog — no covers; Immo has 4 captures only */
 window.PROJECTS = {
   immo: {
     title: 'Immo Dary — Real-Estate Marketplace',
-    tag: 'Mobile · Full-Stack · Stage d’ingénieur @ PLM Ressources · ESPRIT ArcTIC',
-    cover: './assets/projects/immo-40-home.jpg',
+    tag: 'Mobile · Full-Stack · Stage d’ingénieur @ PLM Ressources Sarl · ESPRIT ArcTIC (15 juin 2026 – 15 août 2026)',
+    cover: null,
     summary:
-      'Immo Dary is a production-oriented mobile marketplace for real-estate listings. During my engineering internship at PLM Ressources (June–August 2026), I designed and shipped the product end-to-end: mobile app, secured API, payments, AI assistant, localization, release APK and cloud deployment.',
+      'Immo Dary is a complete mobile marketplace for buying, renting and exploring real-estate listings. I owned the product end-to-end during my engineering internship at PLM Ressources: mobile UX, backend API, security, payments, AI assistant, internationalization, Android release and cloud deployment.',
     details: [
-      'Built the mobile client with React Native + TypeScript: property listings, OpenStreetMap map, favorites, messaging and reservation flows.',
-      'Implemented the backend with Node.js / Express and SQL Server: REST resources for users, listings, chats, bookings and media uploads.',
-      'Secured the API with JWT auth, Google Sign-In, Helmet, CORS and rate limiting.',
-      'Integrated Stripe for payments and Groq AI as an in-app assistant.',
-      'Delivered full i18n in 5 languages and an Android release APK.',
-      'Containerized and deployed with Docker on Microsoft Azure.',
-      'Owned feature delivery from UX flows to cloud runtime in an agile internship context.'
+      'Product scope: users can browse property listings, explore them on an OpenStreetMap map, save favorites, chat about listings, and manage reservations — a real marketplace flow, not a demo screen.',
+      'Mobile app built with React Native and TypeScript: navigation, forms, listing cards, map interactions, messaging UI and booking states designed for Android release.',
+      'Backend built with Node.js / Express and SQL Server: REST resources for authentication, users, listings, media uploads, conversations, favorites and reservations with structured data models.',
+      'API security hardened for production habits: JWT sessions, Google Sign-In, Helmet headers, CORS policy and rate limiting to reduce abuse on public endpoints.',
+      'Payments via Stripe and an in-app assistant powered by Groq AI to help users with listing/search questions inside the product.',
+      'Internationalization shipped in 5 languages (i18n) so the same app works for multilingual users without forking the codebase.',
+      'Delivery & DevOps: generated a release Android APK, containerized the stack with Docker, and deployed on Microsoft Azure so the internship ended with a runnable cloud-hosted system.',
+      'Engineering posture: I treated it as a product internship — from feature design to secure API contracts to packaging and deployment — aligned with ArcTIC Cloud & Infrastructure training at ESPRIT.'
     ],
-    tech: ['React Native', 'TypeScript', 'Express', 'SQL Server', 'JWT', 'Google Sign-In', 'Stripe', 'Groq AI', 'Docker', 'Azure', 'i18n'],
+    tech: ['React Native', 'TypeScript', 'Express', 'SQL Server', 'REST', 'JWT', 'Google Sign-In', 'Stripe', 'Groq AI', 'Docker', 'Azure', 'OpenStreetMap', 'i18n'],
     captures: [
       './assets/projects/immo-01-splash.jpg',
-      './assets/projects/immo-02-boot.jpg',
-      './assets/projects/immo-10-opened.jpg',
       './assets/projects/immo-40-home.jpg',
-      './assets/projects/immo-home.jpg',
       './assets/projects/immo-nav-01.jpg',
-      './assets/projects/immo-nav-03.jpg',
-      './assets/projects/immo-nav-05.jpg',
-      './assets/projects/immo-nav-07.jpg',
-      './assets/projects/immo-nav-09.jpg',
-      './assets/projects/immo-nav-11.jpg',
-      './assets/projects/immo-real_01.jpg',
-      './assets/projects/immo-real_02.jpg',
-      './assets/projects/immo-real_03.jpg',
-      './assets/projects/immo-real_04.jpg',
-      './assets/projects/immo-real_05.jpg',
-      './assets/projects/immo-real_06.jpg',
-      './assets/projects/immo-real_07.jpg',
-      './assets/projects/immo-real_08.jpg',
-      './assets/projects/immo-real_09.jpg',
-      './assets/projects/immo-real_10.jpg',
-      './assets/projects/immo-real_11.jpg',
-      './assets/projects/immo-real_12.jpg',
-      './assets/projects/immo-real_13.jpg',
-      './assets/projects/immo-real_14.jpg',
-      './assets/projects/immo-real_15.jpg',
-      './assets/projects/immo-real_16.jpg',
-      './assets/projects/immo-real_17.jpg',
-      './assets/projects/immo-real_18.jpg',
-      './assets/projects/immo-real_19.jpg',
-      './assets/projects/immo-real_20.jpg',
-      './assets/projects/immo-real_21.jpg',
-      './assets/projects/immo-real_22.jpg',
-      './assets/projects/immo-real_23.jpg',
-      './assets/projects/immo-real_24.jpg',
-      './assets/projects/immo-real_25.jpg',
-      './assets/projects/immo-real_26.jpg',
-      './assets/projects/immo-real_27.jpg',
-      './assets/projects/immo-real_28.jpg'
+      './assets/projects/immo-nav-05.jpg'
     ]
   },
 
   smarthire: {
-    title: 'SmartHire — Cloud Recruitment & Assessment',
-    tag: 'Cloud · DevOps · Microservices · ESPRIT 4th year',
+    title: 'SmartHire — Cloud Recruitment & Assessment Platform',
+    tag: 'Cloud · DevOps · Microservices · ESPRIT 4th-year academic project',
     cover: null,
     summary:
-      'SmartHire is a cloud-native recruitment platform. I contributed to both infrastructure and the Assessment product module: private cloud provisioning, automation, container orchestration and scoring microservices.',
+      'SmartHire is a cloud-native recruitment platform combining private-cloud infrastructure with an Assessment product module. My work spans OpenStack operations, Ansible automation, Docker/Kubernetes orchestration and Spring Boot / Angular microservices for candidate scoring.',
     details: [
-      'Deployed and configured an OpenStack private cloud stack (compute, network, storage) for the platform.',
-      'Automated provisioning and configuration with Ansible playbooks for repeatable environments.',
-      'Containerized services with Docker and orchestrated them with Kubernetes.',
-      'Developed the Assessment module (skill evaluation / scoring) with Spring Boot APIs and an Angular frontend.',
-      'Worked in a microservices architecture separating recruitment, assessment and infra concerns.',
-      'Focus: cloud delivery culture — infra as code, service packaging and application features together.'
+      'Infrastructure: set up and operated an OpenStack environment (compute, networking, storage) used as the cloud foundation of the platform.',
+      'Automation: wrote / used Ansible to provision and configure services reproducibly instead of manual VM setup.',
+      'Runtime: packaged services with Docker and orchestrated them with Kubernetes (scaling, service wiring, deployment lifestyle of microservices).',
+      'Product module: developed the Assessment area — skill evaluation and automated scoring — with Spring Boot APIs and an Angular frontend.',
+      'Architecture: contributed inside a microservices split (recruitment / assessment / infra concerns separated for independent evolution).',
+      'Learning outcome: connects ArcTIC Cloud & Infrastructure skills (OpenStack, automation, containers) with real application features, not infra-only labs.'
     ],
-    tech: ['OpenStack', 'Ansible', 'Docker', 'Kubernetes', 'Spring Boot', 'Angular', 'Microservices'],
+    tech: ['OpenStack', 'Ansible', 'Docker', 'Kubernetes', 'Spring Boot', 'Angular', 'Microservices', 'CI/CD concepts'],
     captures: []
   },
 
   language: {
-    title: 'Language Explorer — Pronunciation Assistant',
-    tag: 'Web · AI features · Stage d’immersion @ Mobelite · ESPRIT',
+    title: 'Language Explorer — AI Pronunciation Assistant',
+    tag: 'Web · Speech AI features · Stage d’immersion @ Mobelite Tunisie · ESPRIT (Jul–Aug 2025)',
     cover: null,
     summary:
-      'Language Explorer helps users train pronunciation in the browser. Built during my immersion internship at Mobelite Tunisie (July–August 2025).',
+      'Language Explorer is a web application that helps learners improve pronunciation through browser speech recognition and synthesis. Built during my immersion internship at Mobelite with a modern React stack and Firebase backend services.',
     details: [
-      'Developed a responsive React.js + Tailwind CSS interface for pronunciation exercises.',
-      'Used the Web Speech API for real-time speech recognition and text-to-speech feedback.',
-      'Implemented authentication and progress persistence with Firebase.',
-      'Delivered a smooth learner journey: practice loops, audio feedback and session continuity.',
-      'Collaborated in an agile product team during a short immersion internship.'
+      'Built the learner UI with React.js and Tailwind CSS: exercise screens, feedback states and responsive layout for desktop/mobile browsers.',
+      'Integrated the Web Speech API for speech-to-text recognition and text-to-speech playback so users can practice and hear corrections in-session.',
+      'Implemented Firebase authentication and persistence so progress / session data survives between visits.',
+      'Focused on a clear practice loop: prompt → speak → recognize → feedback → retry, suitable for short immersion delivery.',
+      'Worked in an agile team context at Mobelite, iterating on UX and reliability of browser speech features.'
     ],
-    tech: ['React.js', 'Tailwind CSS', 'Firebase', 'Web Speech API', 'JavaScript'],
+    tech: ['React.js', 'Tailwind CSS', 'Firebase Auth', 'Firestore', 'Web Speech API', 'JavaScript'],
     captures: []
   },
 
   digitaltwin: {
-    title: 'Digital Twin — Composting Simulation (PFE)',
-    tag: 'Game / Simulation · PFE · DigiArt Living Lab · ISET Kélibia',
+    title: 'Digital Twin — Composting Process Simulation (PFE)',
+    tag: 'Simulation · Digital Twin · Stage PFE @ DigiArt Living Lab · ISET Kélibia (Feb–Jun 2024)',
     cover: null,
     summary:
-      'Final-year PFE at DigiArt Living Lab / ISET Kélibia: a digital twin of a composting process inside an Unreal Engine experience, paired with a React supervision UI.',
+      'PFE project combining a 3D digital twin of a composting process in Unreal Engine with a React supervision interface — bridging immersive simulation and operational monitoring.',
     details: [
-      'Modeled and simulated a composting process as a Digital Twin in Unreal Engine.',
-      'Connected simulation indicators to business/supervision needs for monitoring.',
-      'Built a companion React platform for dynamic supervision and UI control.',
-      'Bridged 3D simulation and web dashboards for decision support.',
-      'Delivered as a full PFE (Feb–Jun 2024) combining realtime visuals and product UI.'
+      'Designed a Digital Twin representation of a composting process inside Unreal Engine to visualize system behavior beyond static diagrams.',
+      'Connected simulation concepts to measurable/supervisable indicators useful for understanding process states.',
+      'Built a companion React web platform for supervision UI: monitoring views and interaction with the simulated process.',
+      'Goal of the PFE: show how 3D twinning + web dashboards can support education/demonstration of environmental processes.',
+      'Delivered as a full end-of-studies project at DigiArt Living Lab under ISET Kélibia academic framing.'
     ],
-    tech: ['Unreal Engine', 'Digital Twin', 'React', 'C++', '3D Simulation'],
+    tech: ['Unreal Engine', 'Digital Twin', 'React', 'C++', '3D Simulation', 'Supervision UI'],
     captures: []
   },
 
   mdintech: {
     title: 'MdinTech / Smart City — Urban Services Platform',
-    tag: 'Full-Stack · Projet Intégré · JavaFX + Symfony',
+    tag: 'Full-Stack · Projet Intégré (PI) · JavaFX desktop + Symfony API',
     cover: null,
     summary:
-      'Team integrated project (PI) for urban services and marketplace-style modules: parking, medical appointments, trips and payments, with a desktop JavaFX client and Symfony API.',
+      'Team integrated project delivering urban-service modules (parking, medical appointments, trips, payments) through a JavaFX client and a secured Symfony backend with MySQL.',
     details: [
-      'Contributed to a multi-module Smart City / MdinTech platform for urban data and services.',
-      'Developed / integrated JavaFX front-office screens for interactive modules.',
-      'Worked with a secured Symfony REST/API backend and MySQL persistence.',
-      'Covered domain flows such as parking, appointments (RDV), trips and payments.',
-      'Collaborated in a multi-person team (PI) with shared repositories and module ownership.'
+      'Participated in a multi-module Smart City / MdinTech platform aimed at city-related services and marketplace-like flows.',
+      'Worked on JavaFX front-office experiences: interactive desktop modules for operators/users of urban services.',
+      'Integrated with a Symfony backend exposing secured APIs and business rules, persisted in MySQL.',
+      'Domain coverage across the PI included parking management, medical RDV, trip-related features and payment-related flows.',
+      'Team engineering: shared ownership, module boundaries and collaborative delivery typical of ESPRIT/ISET-style integrated projects.'
     ],
-    tech: ['JavaFX', 'Java', 'Symfony', 'PHP', 'MySQL'],
+    tech: ['JavaFX', 'Java', 'Symfony', 'PHP', 'MySQL', 'REST/API'],
     captures: []
   },
 
   nestjs: {
-    title: 'E-Commerce API — NestJS (GDG ESPRIT)',
-    tag: 'Backend · Workshop · GDG on Campus ESPRIT',
+    title: 'E-Commerce API — NestJS Workshop (GDG ESPRIT)',
+    tag: 'Backend · NestJS architecture · GDG on Campus ESPRIT (Nov 2024)',
     cover: null,
     summary:
-      'Hands-on NestJS workshop project: a modular e-commerce REST API with clean architecture (modules, providers, dependency injection).',
+      'Workshop project implementing a modular e-commerce REST API with NestJS: categories, products and orders using TypeScript, dependency injection and MongoDB persistence.',
     details: [
-      'Implemented NestJS modules for categories, products and orders.',
-      'Used TypeScript with dependency injection and layered providers/services.',
-      'Designed REST endpoints following NestJS module conventions.',
-      'Persisted data with MongoDB in a document-oriented model.',
-      'Validated understanding of NestJS architecture through a certified GDG workshop (Nov 2024).'
+      'Structured the API with NestJS modules/providers following dependency-injection best practices.',
+      'Implemented domain endpoints for catalog categories, products and order handling.',
+      'Used TypeScript end-to-end for typed DTOs/services and clearer maintainability.',
+      'Persisted entities with MongoDB in a document model adapted to catalog/order data.',
+      'Completed as part of a certified GDG ESPRIT NestJS workshop — focus on clean backend architecture rather than UI.'
     ],
-    tech: ['NestJS', 'TypeScript', 'MongoDB', 'REST', 'Node.js'],
+    tech: ['NestJS', 'TypeScript', 'Node.js', 'MongoDB', 'REST', 'Dependency Injection'],
     captures: []
   },
 
   charara: {
-    title: 'Charara / Smart-Weld — Product Website',
-    tag: 'Front-end · Product showcase',
+    title: 'Charara / Smart-Weld — Welding Tech Website',
+    tag: 'Front-end · Static product showcase',
     cover: null,
     summary:
-      'Marketing / product website for Charara Smart-Weld Adapter: a responsive showcase presenting the welding tech solution.',
+      'Responsive product website presenting Charara’s Smart-Weld Adapter solution: clear value proposition, technical highlights and mobile-friendly layout in vanilla web technologies.',
     details: [
-      'Designed a clean responsive landing experience in HTML, CSS and JavaScript.',
-      'Presented product value proposition and technical highlights for Smart-Weld.',
-      'Focused on clarity, mobile layout and fast static delivery (no heavy framework).'
+      'Designed and coded a lightweight marketing/product site with HTML, CSS and JavaScript.',
+      'Presented the Smart-Weld Adapter concept with readable sections for features and technical positioning.',
+      'Optimized for responsive browsing without a heavy SPA framework — fast to load and easy to host.',
+      'Useful as a product-communication artifact alongside deeper engineering projects.'
     ],
-    tech: ['HTML', 'CSS', 'JavaScript', 'Responsive UI'],
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
     captures: []
   },
 
   iot: {
     title: 'Environmental IoT Monitor — LoRaWAN',
-    tag: 'IoT · Stage de perfectionnement @ Smart for Green · ISET Kélibia',
+    tag: 'IoT · Embedded · Stage de perfectionnement @ Smart for Green · ISET Kélibia (Jan–Feb 2023)',
     cover: null,
     summary:
-      'IoT monitoring solution built at Smart for Green: Arduino sensors over LoRaWAN for long-range environmental data with optimized power use.',
+      'IoT monitoring solution using Arduino sensors and LoRaWAN long-range links, built to collect environmental data remotely while reducing energy consumption.',
     details: [
-      'Built sensor acquisition on Arduino for environmental monitoring.',
-      'Used LoRaWAN for long-range transmission (around 2 km in the project context).',
-      'Optimized power management and reported ~30% energy consumption reduction.',
-      'Targeted remote field deployments where Wi-Fi is impractical.'
+      'Implemented sensor acquisition on Arduino for environmental monitoring use-cases.',
+      'Used LoRaWAN to transmit data over long range (~2 km in the project context), suitable where Wi-Fi is unavailable.',
+      'Worked on power-aware design; the project reported about 30% reduction in energy consumption.',
+      'Oriented toward remote field deployment constraints: range, autonomy and simple embedded firmware.'
     ],
-    tech: ['Arduino', 'LoRaWAN', 'C++', 'IoT Sensors'],
+    tech: ['Arduino', 'LoRaWAN', 'C++', 'IoT Sensors', 'Low-power design'],
     captures: []
   },
 
   fire: {
-    title: 'Arduino Forest Fire Detection',
-    tag: 'IoT · Academic project',
+    title: 'Arduino Forest Fire Detection System',
+    tag: 'IoT · Academic early-warning system',
     cover: null,
     summary:
-      'Academic early-warning system for forest fire risk using Arduino with multi-sensor alerting logic.',
+      'Academic embedded system detecting early signs of forest fire risk using multiple Arduino sensors and alerting logic for high-risk zones.',
     details: [
-      'Combined smoke, heat and flame sensors for early detection.',
-      'Designed alerting logic suitable for remote high-risk zones.',
-      'Focused on low-power embedded operation for field constraints.'
+      'Combined flame, smoke and temperature/humidity (DHT) sensing for multi-signal detection.',
+      'Designed alerting behavior adapted to remote forest contexts.',
+      'Focused on low-power Arduino operation and practical sensor fusion for early warning.'
     ],
     tech: ['Arduino', 'C++', 'Flame Sensor', 'DHT Sensor', 'IoT'],
     captures: []
   },
 
   gamejam: {
-    title: 'Global Game Jam 2024 — Prototype',
-    tag: 'Game Dev · Team · 48-hour jam',
+    title: 'Global Game Jam 2024 — Game Prototype',
+    tag: 'Game development · 48-hour international jam · Teamwork',
     cover: null,
     summary:
-      'Participated in Global Game Jam 2024: a 48-hour worldwide game creation marathon shipping a playable prototype with a team.',
+      'Participation in Global Game Jam 2024: designing and shipping a playable game prototype in 48 hours with a team under strict timeboxing.',
     details: [
-      'Designed and implemented gameplay under extreme time pressure.',
-      'Collaborated on scope control, iteration and prototype polish.',
-      'Shipped a complete playable build within the jam window.'
+      'Co-created gameplay, scope and prototype features within the jam theme constraints.',
+      'Practiced rapid iteration: cut non-essentials, test quickly, ship a playable build.',
+      'Strengthened collaboration skills under deadline pressure typical of jam environments.'
     ],
-    tech: ['Game Design', 'Team Collaboration', 'Rapid Prototyping'],
+    tech: ['Game Design', 'Rapid Prototyping', 'Team Collaboration'],
     captures: []
   },
 
   edu: {
     title: 'Educational Game Supervision Platform',
-    tag: 'Web · Education · DeepFlow Club',
+    tag: 'Web dashboards · Learning UX · DeepFlow AI Club',
     cover: null,
     summary:
-      'Web supervision platform for an educational game experience, developed in the DeepFlow AI Club context: dashboards, progress tracking and learning UX.',
+      'Web platform to supervise an educational game experience: learner progress, dashboards and interaction flows developed in the DeepFlow club context.',
     details: [
-      'Designed UX/UI for supervisors and learners around an educational game.',
-      'Implemented progress tracking and interactive learning dashboards.',
-      'Used a React + Node.js stack for web supervision workflows.',
-      'Built in a community/club setting (DeepFlow) emphasizing usable learning analytics.'
+      'Designed supervision UX for educators/mentors following learner activity in an educational game.',
+      'Implemented dashboard-oriented UI for progress tracking and learning visibility.',
+      'Used React on the front and Node.js services to support supervision workflows.',
+      'Built in a community/club setting (DeepFlow) emphasizing usable learning analytics over pure theory.'
     ],
-    tech: ['React.js', 'Node.js', 'JavaScript', 'Dashboard UI'],
+    tech: ['React.js', 'Node.js', 'JavaScript', 'Dashboard UI', 'UX for learning'],
     captures: []
   }
 };

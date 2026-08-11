@@ -242,12 +242,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       currentCaptures = Array.isArray(p.captures) ? p.captures.filter(Boolean) : [];
 
       const hasImages = currentCaptures.length > 0;
-      if (hero) hero.hidden = !hasImages;
+      // Never show a cover/hero image — gallery only when captures exist
+      if (hero) hero.hidden = true;
       if (galleryWrap) galleryWrap.hidden = !hasImages;
 
+      cover.removeAttribute('src');
       if (hasImages) {
-        cover.src = p.cover || currentCaptures[0];
-        cover.alt = p.title;
         captureCount.textContent = `(${currentCaptures.length})`;
         gallery.innerHTML = currentCaptures.map((src, i) => `
           <button type="button" data-idx="${i}" aria-label="Open capture ${i + 1}">
@@ -255,7 +255,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           </button>
         `).join('');
       } else {
-        cover.removeAttribute('src');
         gallery.innerHTML = '';
         captureCount.textContent = '';
       }
