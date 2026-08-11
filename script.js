@@ -205,8 +205,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       return;
     }
 
-    const cover = document.getElementById('modalCover');
-    const hero = document.querySelector('.project-modal-hero');
     const title = document.getElementById('modalTitle');
     const tag = document.getElementById('modalTag');
     const summary = document.getElementById('modalSummary');
@@ -242,11 +240,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       currentCaptures = Array.isArray(p.captures) ? p.captures.filter(Boolean) : [];
 
       const hasImages = currentCaptures.length > 0;
-      // Never show a cover/hero image — gallery only when captures exist
-      if (hero) hero.hidden = true;
       if (galleryWrap) galleryWrap.hidden = !hasImages;
 
-      cover.removeAttribute('src');
       if (hasImages) {
         captureCount.textContent = `(${currentCaptures.length})`;
         gallery.innerHTML = currentCaptures.map((src, i) => `
