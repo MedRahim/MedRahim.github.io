@@ -776,14 +776,20 @@ section { padding: 7rem 5%; }
 .project-modal-content > p {
   color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.9rem;
 }
-.modal-note {
-  background: rgba(245,158,11,0.1);
-  border: 1px solid rgba(245,158,11,0.25);
-  color: #fbbf24;
-  padding: 0.7rem 0.9rem;
-  border-radius: 10px;
-  font-size: 0.82rem !important;
+.modal-details {
+  margin: 0 0 1rem;
+  padding-left: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
 }
+.modal-details li {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.project-card.no-image .project-thumb { display: none; }
+.project-card.no-image .project-card-body { padding-top: 1.4rem; }
 .modal-gallery-title {
   margin: 1.2rem 0 0.8rem;
   font-size: 0.95rem;

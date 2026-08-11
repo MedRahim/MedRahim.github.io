@@ -206,12 +206,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     const cover = document.getElementById('modalCover');
+    const hero = document.querySelector('.project-modal-hero');
     const title = document.getElementById('modalTitle');
     const tag = document.getElementById('modalTag');
     const summary = document.getElementById('modalSummary');
+    const details = document.getElementById('modalDetails');
     const note = document.getElementById('modalNote');
     const tech = document.getElementById('modalTech');
     const gallery = document.getElementById('modalGallery');
+    const galleryWrap = document.getElementById('modalGalleryWrap');
     const captureCount = document.getElementById('modalCaptureCount');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxCounter = document.getElementById('lightboxCounter');
@@ -224,26 +227,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     function openModal(id) {
       const p = window.PROJECTS[id];
       if (!p) return;
-      cover.src = p.cover;
-      cover.alt = p.title;
       title.textContent = p.title;
       tag.textContent = p.tag;
       summary.textContent = p.summary;
-      if (p.note) {
-        note.hidden = false;
-        note.textContent = p.note;
-      } else {
-        note.hidden = true;
-        note.textContent = '';
-      }
+
+      const detailList = p.details || [];
+      details.innerHTML = detailList.map(d => `<li>${d}</li>`).join('');
+      details.hidden = detailList.length === 0;
+
+      note.hidden = true;
+      note.textContent = '';
+
       tech.innerHTML = (p.tech || []).map(t => `<span>${t}</span>`).join('');
-      currentCaptures = p.captures || [];
-      captureCount.textContent = `(${currentCaptures.length})`;
-      gallery.innerHTML = currentCaptures.map((src, i) => `
-        <button type="button" data-idx="${i}" aria-label="Open capture ${i + 1}">
-          <img src="${src}" alt="${p.title} capture ${i + 1}" loading="lazy"/>
-        </button>
-      `).join('');
+      currentCaptures = Array.isArray(p.captures) ? p.captures.filter(Boolean) : [];
+
+      const hasImages = currentCaptures.length > 0;
+      if (hero) hero.hidden = !hasImages;
+      if (galleryWrap) galleryWrap.hidden = !hasImages;
+
+      if (hasImages) {
+        cover.src = p.cover || currentCaptures[0];
+        cover.alt = p.title;
+        captureCount.textContent = `(${currentCaptures.length})`;
+        gallery.innerHTML = currentCaptures.map((src, i) => `
+          <button type="button" data-idx="${i}" aria-label="Open capture ${i + 1}">
+            <img src="${src}" alt="${p.title} capture ${i + 1}" loading="lazy"/>
+          </button>
+        `).join('');
+      } else {
+        cover.removeAttribute('src');
+        gallery.innerHTML = '';
+        captureCount.textContent = '';
+      }
+
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
