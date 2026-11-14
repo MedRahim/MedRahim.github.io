@@ -911,7 +911,7 @@ section { padding: 7rem 5%; }
 
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   gap: 1.5rem;
 }
 
@@ -1242,3 +1242,11 @@ input:focus-visible, textarea:focus-visible {
 
 /* Keep the modal title clear of the floating close button */
 .project-modal-content h3 { padding-right: 2.6rem; }
+
+/* Links inside project case studies */
+.modal-details a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.modal-details a:hover { color: var(--accent); }

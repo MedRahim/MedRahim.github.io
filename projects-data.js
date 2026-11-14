@@ -12,7 +12,8 @@ window.PROJECTS = {
       'React Native + TypeScript: stack/tab navigation, listing and map UI, booking states, validation, Android release.',
       'Express + SQL Server: REST for users, listings, media, favorites, conversations and reservations.',
       'Auth & security: JWT, Google Sign-In, Helmet, CORS and rate limiting on sensitive endpoints.',
-      'Stripe payments, Groq in-app assistant, 5-language i18n, Docker on Azure, signed APK for field testing.'
+      'Stripe payments, Groq in-app assistant, 5-language i18n, Docker on Azure, signed APK for field testing.',
+      'Public landing page and downloadable release APK at medrahim.github.io/immodary.'
     ],
     tech: ['React Native', 'TypeScript', 'Express', 'SQL Server', 'REST', 'JWT', 'Google Sign-In', 'Stripe', 'Groq AI', 'Docker', 'Azure', 'OpenStreetMap', 'i18n'],
     repo: 'https://github.com/MedRahim/GestionImmobiliere',
@@ -74,6 +75,24 @@ window.PROJECTS = {
     captures: []
   },
 
+  devopslabs: {
+    title: 'DevOps Lab Series — Git, Docker, Jenkins, Terraform & Ansible',
+    tag: 'Cloud · DevOps · Junior DevOps programme @ Davine Technologies (2026)',
+    cover: null,
+    summary:
+      'Five weeks of hands-on DevOps labs delivered during a junior DevOps programme at Davine Technologies: collaboration with Git, a multi-container Docker Compose stack, a declarative Jenkins CI/CD pipeline, then infrastructure as code with Terraform and configuration with Ansible.',
+    details: [
+      'Week 2 — <a href="https://github.com/MedRahim/DevOps-Week-02" target="_blank" rel="noopener noreferrer">Git, GitHub &amp; collaboration</a>: feature branches, merged pull requests and a resolved merge conflict on a shared Python codebase.',
+      'Week 4 — <a href="https://github.com/MedRahim/DevOps-Week-04" target="_blank" rel="noopener noreferrer">Docker &amp; Docker Compose</a>: Nginx frontend, Node.js/Express backend and PostgreSQL 16, custom Dockerfiles, dedicated bridge network.',
+      'Week 5 — <a href="https://github.com/MedRahim/DevOps-Week-05" target="_blank" rel="noopener noreferrer">Jenkins CI/CD</a>: declarative pipeline with checkout, build, node:test suite and a custom validation stage; Jenkins itself run through Compose.',
+      'Week 6 — <a href="https://github.com/MedRahim/DevOps-Week-06" target="_blank" rel="noopener noreferrer">Terraform &amp; Ansible</a>: Terraform provisions the infrastructure, Ansible configures the server and deploys the application, with a documented destroy path.',
+      'The through-line: each week adds one layer to the same delivery chain — from version control to reproducible infrastructure.'
+    ],
+    tech: ['Git', 'Docker', 'Docker Compose', 'Jenkins', 'Terraform', 'Ansible', 'PostgreSQL', 'Nginx'],
+    repo: 'https://github.com/MedRahim/DevOps-Week-06',
+    captures: []
+  },
+
   language: {
     title: 'Language Explorer — AI Pronunciation Assistant',
     tag: 'Web · Speech AI features · Stage d’immersion @ Mobelite Tunisie · ESPRIT (Jul–Aug 2025)',
@@ -121,6 +140,7 @@ window.PROJECTS = {
       'Secured API consumption from JavaFX with DTO mapping and integrated squad delivery.'
     ],
     tech: ['JavaFX', 'Java', 'Symfony', 'PHP', 'MySQL', 'REST/API'],
+    repo: 'https://github.com/MedRahim/pidev_Symfony',
     captures: []
   },
 
