@@ -911,16 +911,17 @@ section { padding: 7rem 5%; }
 
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.25rem;
 }
 
 .cert-card {
   background: var(--glass);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 2rem;
-  display: flex; flex-direction: column; gap: 1.5rem;
+  padding: 1.4rem;
+  display: flex; flex-direction: row; gap: 1.1rem;
+  align-items: flex-start;
   backdrop-filter: blur(10px);
   transition: var(--transition);
 }
@@ -931,58 +932,89 @@ section { padding: 7rem 5%; }
 }
 
 .cert-badge {
-  width: 80px; height: 80px; border-radius: 16px;
+  width: 58px; height: 58px; border-radius: 12px;
   overflow: hidden; background: rgba(255,255,255,0.05);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
 .cert-badge img { width: 100%; height: 100%; object-fit: contain; }
 .cert-badge-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   background: color-mix(in srgb, var(--badge-color) 10%, transparent);
   color: var(--badge-color);
   border: 1px solid color-mix(in srgb, var(--badge-color) 25%, transparent);
 }
 
+.cert-body { min-width: 0; }
+
 .cert-org {
-  font-size: 0.75rem; font-weight: 700;
+  font-size: 0.68rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.5px;
-  color: var(--text-muted); display: block; margin-bottom: 0.4rem;
+  color: var(--text-muted); display: block; margin-bottom: 0.3rem;
 }
 .cert-body h3 {
-  font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--text);
+  font-size: 0.95rem; font-weight: 700; margin-bottom: 0.45rem; color: var(--text);
+  line-height: 1.35;
 }
-.cert-body p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
+.cert-body p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
 
 .cert-meta {
-  display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem;
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.75rem;
 }
 .cert-date {
-  font-size: 0.78rem; color: var(--text-muted);
+  font-size: 0.75rem; color: var(--text-muted);
   display: flex; align-items: center; gap: 5px;
 }
 .cert-date i { color: var(--primary); }
 .cert-level {
-  font-size: 0.72rem; font-weight: 700;
+  font-size: 0.7rem; font-weight: 700;
   padding: 0.2rem 0.7rem; border-radius: 50px;
   display: flex; align-items: center; gap: 5px;
 }
 .cert-gold { background: rgba(245,158,11,0.15); color: var(--amber); }
 .cert-blue { background: rgba(66,133,244,0.15); color: #4285f4; }
 .cert-green { background: rgba(16,185,129,0.15); color: var(--teal); }
+.cert-purple { background: rgba(139,92,246,0.15); color: #a78bfa; }
+.cert-red { background: rgba(199,70,52,0.15); color: #e8735f; }
 
 .cert-btn {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.82rem; font-weight: 600; color: var(--primary);
-  padding: 0.55rem 1.1rem;
+  font-size: 0.76rem; font-weight: 600; color: var(--primary);
+  padding: 0.4rem 0.9rem;
   border: 1px solid rgba(108,99,255,0.3);
-  border-radius: 50px; margin-top: 1rem;
+  border-radius: 50px; margin-top: 0.85rem;
   transition: var(--transition);
   width: fit-content;
 }
 .cert-btn:hover {
   background: var(--primary); color: #fff;
   border-color: var(--primary);
+}
+
+.certs-extra {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.4rem;
+  margin-top: 1.6rem; padding: 1rem 1.3rem;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.02);
+}
+.certs-extra-label {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.6px; color: var(--text-muted);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.certs-extra-label i { color: var(--primary); }
+.certs-extra a {
+  font-size: 0.78rem; color: var(--text-muted);
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: var(--transition);
+}
+.certs-extra a i { color: var(--primary); }
+.certs-extra a:hover { color: var(--primary); }
+
+@media (max-width: 540px) {
+  .cert-card { flex-direction: column; gap: 0.9rem; padding: 1.2rem; }
+  .cert-badge { width: 48px; height: 48px; }
 }
 
 /* ===================================================
