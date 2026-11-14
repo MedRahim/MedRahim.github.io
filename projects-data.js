@@ -77,10 +77,10 @@ window.PROJECTS = {
 
   devopslabs: {
     title: 'DevOps Lab Series — Git, Docker, Jenkins, Terraform & Ansible',
-    tag: 'Cloud · DevOps · Junior DevOps programme @ Davine Technologies (2026)',
+    tag: 'Cloud · DevOps · Hands-on labs (2026)',
     cover: null,
     summary:
-      'Five weeks of hands-on DevOps labs delivered during a junior DevOps programme at Davine Technologies: collaboration with Git, a multi-container Docker Compose stack, a declarative Jenkins CI/CD pipeline, then infrastructure as code with Terraform and configuration with Ansible.',
+      'Hands-on DevOps labs: collaboration with Git, a multi-container Docker Compose stack, a declarative Jenkins CI/CD pipeline, then infrastructure as code with Terraform and configuration with Ansible.',
     details: [
       'Week 2 — <a href="https://github.com/MedRahim/DevOps-Week-02" target="_blank" rel="noopener noreferrer">Git, GitHub &amp; collaboration</a>: feature branches, merged pull requests and a resolved merge conflict on a shared Python codebase.',
       'Week 4 — <a href="https://github.com/MedRahim/DevOps-Week-04" target="_blank" rel="noopener noreferrer">Docker &amp; Docker Compose</a>: Nginx frontend, Node.js/Express backend and PostgreSQL 16, custom Dockerfiles, dedicated bridge network.',
