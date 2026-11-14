@@ -160,27 +160,21 @@ backBtn.addEventListener('click', () => {
 });
 
 /* ===================== CONTACT FORM ===================== */
+// Static site: no backend. Compose the message in the visitor's mail client
+// instead of showing a fake "Message Sent" confirmation.
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  const original = btn.innerHTML;
+  const form = e.target;
+  const name = form.elements.name.value.trim();
+  const email = form.elements.email.value.trim();
+  const topic = form.elements.subject.value.trim() || 'Portfolio contact';
+  const message = form.elements.message.value.trim();
 
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-  btn.disabled = true;
-
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-    btn.style.background = '#10b981';
-    btn.style.borderColor = '#10b981';
-
-    setTimeout(() => {
-      btn.innerHTML = original;
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      btn.disabled = false;
-      e.target.reset();
-    }, 3500);
-  }, 1500);
+  const subject = `[Portfolio] ${topic}`;
+  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+  window.location.href =
+    'mailto:medrahim.bennejma@esprit.tn' +
+    `?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
 /* ===================== SMOOTH SCROLL ===================== */
@@ -211,6 +205,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const details = document.getElementById('modalDetails');
     const note = document.getElementById('modalNote');
     const tech = document.getElementById('modalTech');
+    const repoLink = document.getElementById('modalRepo');
     const gallery = document.getElementById('modalGallery');
     const galleryWrap = document.getElementById('modalGalleryWrap');
     const captureCount = document.getElementById('modalCaptureCount');
@@ -256,6 +251,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
 
       tech.innerHTML = (p.tech || []).map(t => `<span>${t}</span>`).join('');
+
+      if (repoLink) {
+        if (p.repo) {
+          repoLink.href = p.repo;
+          repoLink.hidden = false;
+        } else {
+          repoLink.hidden = true;
+          repoLink.removeAttribute('href');
+        }
+      }
+
       hideGallery();
 
       modal.classList.add('open');

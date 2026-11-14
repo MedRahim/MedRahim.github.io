@@ -1178,3 +1178,67 @@ footer strong { color: var(--primary); }
   .hero-name { font-size: 2.2rem; }
 }
 
+
+/* ===================================================
+   CASE-STUDY AFFORDANCE / REPO / FORM NOTE
+=================================================== */
+.project-more {
+  margin-top: 0.4rem;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--primary);
+  opacity: 0.8;
+  transition: var(--transition);
+}
+.project-card:hover .project-more { gap: 0.65rem; opacity: 1; }
+
+.modal-repo {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  margin-top: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--text);
+  background: rgba(108,99,255,0.08);
+  transition: var(--transition);
+}
+.modal-repo:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(108,99,255,0.14);
+}
+.modal-repo[hidden] { display: none; }
+
+.form-note {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: -0.3rem;
+}
+
+/* ===================================================
+   ACCESSIBILITY
+=================================================== */
+a:focus-visible, button:focus-visible,
+input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .hero-badge { font-size: 0.7rem; padding: 0.35rem 0.8rem; text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .cursor, .cursor-follower { display: none; }
+}
+
+/* Keep the modal title clear of the floating close button */
+.project-modal-content h3 { padding-right: 2.6rem; }
