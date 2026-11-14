@@ -28,9 +28,23 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23080812'/%3E%3Ctext x='50' y='68' font-family='Inter,Arial,sans-serif' font-size='52' font-weight='800' text-anchor='middle' fill='%236c63ff'%3EMR%3C/text%3E%3C/svg%3E"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link rel="stylesheet" href="style.css?v=6"/>
+  <link rel="stylesheet" href="style.css?v=7"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script>
+    // Apply the saved theme and language before paint to avoid a flash.
+    (function () {
+      try {
+        var t = localStorage.getItem('mr-theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('mr-lang');
+        if (l === 'fr' || l === 'en') document.documentElement.lang = l;
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -55,9 +69,23 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-actions">
+      <a class="nav-tool nav-cv" href="./CV_Mohamed_Rahim_Ben_Nejma.pdf" download
+         aria-label="Download CV (PDF)" title="Download CV (PDF)">
+        <i class="fas fa-file-arrow-down"></i><span>CV</span>
+      </a>
+      <button class="nav-tool" id="themeToggle" type="button"
+              aria-label="Switch theme" aria-pressed="false" title="Light / dark mode">
+        <i class="fas fa-sun" id="themeIcon"></i>
+      </button>
+      <div class="lang-switch" role="group" aria-label="Language / Langue">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- ========== HERO ========== -->
@@ -87,7 +115,7 @@
         </div>
         <div class="hero-btns">
           <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> See My Work</a>
-          <a href="./LastCV.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Download CV</a>
+          <a href="./CV_Mohamed_Rahim_Ben_Nejma.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> Download CV</a>
         </div>
         <div class="hero-socials">
           <a href="https://github.com/MedRahim" target="_blank" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
@@ -221,7 +249,7 @@
             <div class="tl-header">
               <div class="tl-company">
                 <h3>PLM Ressources Sarl</h3>
-                <span class="tl-type eng">Stage d'ingénieur</span>
+                <span class="tl-type eng">Engineering Internship</span>
                 <span class="tl-school">ESPRIT · ArcTIC</span>
               </div>
               <span class="tl-date"><i class="fas fa-calendar"></i> 15 Jun 2026 – 15 Aug 2026</span>
@@ -244,7 +272,7 @@
             <div class="tl-header">
               <div class="tl-company">
                 <h3>Mobelite Tunisie</h3>
-                <span class="tl-type intern">Stage d'Immersion</span>
+                <span class="tl-type intern">Immersion Internship</span>
                 <span class="tl-school">ESPRIT</span>
               </div>
               <span class="tl-date"><i class="fas fa-calendar"></i> Jul 2025 – Aug 2025</span>
@@ -267,7 +295,7 @@
             <div class="tl-header">
               <div class="tl-company">
                 <h3>DigiArt Living Lab</h3>
-                <span class="tl-type pfe">Stage PFE</span>
+                <span class="tl-type pfe">Final-Year Project (PFE)</span>
                 <span class="tl-school">ISET Kélibia</span>
               </div>
               <span class="tl-date"><i class="fas fa-calendar"></i> Feb 2024 – Jun 2024</span>
@@ -290,7 +318,7 @@
             <div class="tl-header">
               <div class="tl-company">
                 <h3>Smart for Green</h3>
-                <span class="tl-type perf">Stage de Perfectionnement</span>
+                <span class="tl-type perf">Professional Development Internship</span>
                 <span class="tl-school">ISET Kélibia</span>
               </div>
               <span class="tl-date"><i class="fas fa-calendar"></i> Jan 2023 – Feb 2023</span>
@@ -312,7 +340,7 @@
             <div class="tl-header">
               <div class="tl-company">
                 <h3>Denim Authority</h3>
-                <span class="tl-type init">Stage d'Initiation</span>
+                <span class="tl-type init">Initiation Internship</span>
                 <span class="tl-school">ISET Kélibia</span>
               </div>
               <span class="tl-date"><i class="fas fa-calendar"></i> Jan 2022 – Feb 2022</span>
@@ -960,6 +988,15 @@
               </div>
             </div>
           </div>
+          <div class="contact-card">
+            <a href="./CV_Mohamed_Rahim_Ben_Nejma.pdf" class="contact-item-link" download>
+              <div class="contact-item-icon" style="--ci:#6c63ff"><i class="fas fa-file-pdf"></i></div>
+              <div class="contact-item-text">
+                <span>Resume</span>
+                <strong>CV — Cloud &amp; DevOps · PDF, 1 page</strong>
+              </div>
+            </a>
+          </div>
           <div class="contact-socials">
             <a href="https://github.com/MedRahim" target="_blank" aria-label="GitHub">
               <i class="fab fa-github"></i>
@@ -976,20 +1013,20 @@
           <div class="form-row">
             <div class="form-group">
               <label for="cfName">Your Name</label>
-              <input type="text" id="cfName" name="name" placeholder="John Doe" autocomplete="name" required/>
+              <input type="text" id="cfName" name="name" placeholder="John Doe" data-i18n-placeholder="ph.name" autocomplete="name" required/>
             </div>
             <div class="form-group">
               <label for="cfEmail">Your Email</label>
-              <input type="email" id="cfEmail" name="email" placeholder="john@example.com" autocomplete="email" required/>
+              <input type="email" id="cfEmail" name="email" placeholder="john@example.com" data-i18n-placeholder="ph.email" autocomplete="email" required/>
             </div>
           </div>
           <div class="form-group">
             <label for="cfSubject">Subject</label>
-            <input type="text" id="cfSubject" name="subject" placeholder="PFE opportunity / Collaboration"/>
+            <input type="text" id="cfSubject" name="subject" placeholder="PFE opportunity / Collaboration" data-i18n-placeholder="ph.subject"/>
           </div>
           <div class="form-group">
             <label for="cfMessage">Message</label>
-            <textarea id="cfMessage" name="message" rows="6" placeholder="Tell me about the opportunity..." required></textarea>
+            <textarea id="cfMessage" name="message" rows="6" placeholder="Tell me about the opportunity..." data-i18n-placeholder="ph.message" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
             <i class="fas fa-paper-plane"></i> Send Message
@@ -1076,7 +1113,10 @@
   }
   </script>
 
-  <script src="projects-data.js?v=6"></script>
-  <script src="script.js?v=6"></script>
+  <script src="i18n-fr.js?v=7"></script>
+  <script src="i18n.js?v=7"></script>
+  <script src="projects-data.js?v=7"></script>
+  <script src="projects-fr.js?v=7"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

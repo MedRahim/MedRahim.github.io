@@ -37,14 +37,14 @@ document.querySelectorAll('a, button, .project-card, .stat-card, .cert-card').fo
 });
 
 /* ===================== TYPEWRITER ===================== */
-const roles = [
+const roles = (window.I18N && window.I18N.roles()) || [
   'Cloud & DevOps Engineer',
   'Full-Stack Developer',
   'React Native Builder',
   'OpenStack / K8s Enthusiast',
   'IoT & Product Maker'
 ];
-let roleIdx = 0, charIdx = 0, isDeleting = false;
+let roleIdx = 0, charIdx = 0, isDeleting = false, typeTimer = null;
 const typewriterEl = document.getElementById('typewriter');
 
 function typewrite() {
@@ -65,9 +65,22 @@ function typewrite() {
     roleIdx = (roleIdx + 1) % roles.length;
     delay = 400;
   }
-  setTimeout(typewrite, delay);
+  typeTimer = setTimeout(typewrite, delay);
 }
 typewrite();
+
+// Restart the loop with the role list of the newly selected language.
+document.addEventListener('i18n:changed', () => {
+  if (!window.I18N) return;
+  const next = window.I18N.roles();
+  if (!next || !next.length) return;
+  clearTimeout(typeTimer);
+  roles.length = 0;
+  roles.push(...next);
+  roleIdx = 0; charIdx = 0; isDeleting = false;
+  typewriterEl.textContent = '';
+  typewrite();
+});
 
 /* ===================== NAVBAR SCROLL ===================== */
 const navbar = document.getElementById('navbar');
@@ -165,13 +178,17 @@ backBtn.addEventListener('click', () => {
 document.getElementById('contactForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const form = e.target;
+  const isFr = window.I18N && window.I18N.lang === 'fr';
   const name = form.elements.name.value.trim();
   const email = form.elements.email.value.trim();
-  const topic = form.elements.subject.value.trim() || 'Portfolio contact';
+  const topic = form.elements.subject.value.trim() ||
+    (isFr ? 'Contact portfolio' : 'Portfolio contact');
   const message = form.elements.message.value.trim();
 
   const subject = `[Portfolio] ${topic}`;
-  const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+  const body = isFr
+    ? `Nom : ${name}\nE-mail : ${email}\n\n${message}`
+    : `Name: ${name}\nEmail: ${email}\n\n${message}`;
   window.location.href =
     'mailto:medrahim.bennejma@esprit.tn' +
     `?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -220,6 +237,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     let currentCaptures = [];
+    let activeId = null;
 
     function hideGallery() {
       currentCaptures = [];
@@ -233,8 +251,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     hideGallery();
 
-    function openModal(id) {
-      const p = window.PROJECTS[id];
+    function catalog(lang) {
+      return (lang === 'fr' && window.PROJECTS_FR) ? window.PROJECTS_FR : window.PROJECTS;
+    }
+
+    function render(id) {
+      const lang = window.I18N ? window.I18N.lang : 'en';
+      const source = catalog(lang);
+      const p = source[id] || window.PROJECTS[id];
       if (!p) return;
 
       title.textContent = p.title;
@@ -256,6 +280,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (p.repo) {
           repoLink.href = p.repo;
           repoLink.hidden = false;
+          repoLink.innerHTML = '<i class="fab fa-github"></i> ' +
+            (lang === 'fr' ? 'Voir le dépôt' : 'View repository');
         } else {
           repoLink.hidden = true;
           repoLink.removeAttribute('href');
@@ -263,6 +289,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       }
 
       hideGallery();
+    }
+
+    function openModal(id) {
+      if (!window.PROJECTS[id]) return;
+      activeId = id;
+      render(id);
 
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
@@ -270,10 +302,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     function closeModal() {
+      activeId = null;
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
+
+    // Keep an open case study in sync when the visitor switches language.
+    document.addEventListener('i18n:changed', () => {
+      if (activeId) render(activeId);
+    });
 
     function openLightbox() { /* gallery disabled */ }
 
